@@ -91,10 +91,11 @@ body {
 .dashboard-container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 30px 20px;
+  padding: 80px 20px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
+  overflow: hidden;
 }
 
 .dashboard-title {
@@ -104,11 +105,21 @@ body {
     font-weight: bold;
 }
 
+  .dashboard-message {
+    color: #555555;
+    margin: -15px 0 20px;
+    text-align: center;
+  }
+
+  .dashboard-message.error {
+    color: #b42318;
+  }
+
 .cards-grid {
-    display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
     width: 100%;
-    justify-content: center;
     margin-bottom: 20px;
 }
 
@@ -117,7 +128,8 @@ body {
     border: 1px solid #dcdcdc;
     border-radius: 2px;
     padding: 15px;
-    width: 220px;
+    width: 100%;
+    min-width: 0;
     height: 120px;
     display: flex;
     flex-direction: column;
@@ -159,12 +171,18 @@ select {
 }
 
 .car-image-container {
+  width: 100%;
     margin: 20px 0;
     text-align: center;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .car-image-container img {
-    max-width: 420px;
+  display: block;
+  width: min(420px, 100%);
     height: auto;
 }
 
@@ -176,6 +194,7 @@ select {
 
 table {
     width: 100%;
+  min-width: 680px;
     border-collapse: collapse;
     font-size: 13px;
 }
@@ -201,4 +220,45 @@ tbody tr {
     font-size: 12px;
     width: 180px;
     background-color: #f9f9f9;
+    max-width: 100%;
+  }
+
+  @media (max-width: 800px) {
+    .cards-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-title {
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .dashboard-container {
+      padding: 75px 12px 24px;
+    }
+
+    .cards-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .card-item {
+      height: 112px;
+    }
+
+    .dashboard-title {
+      font-size: 21px;
+      margin-bottom: 20px;
+    }
+
+    .car-image-container {
+      margin: 14px 0;
+    }
+
+    th,
+    td {
+      padding: 10px;
+    }
 }

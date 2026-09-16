@@ -1,21 +1,30 @@
-    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+    <button
+        class="hamburger-btn"
+        type="button"
+        aria-label="Menu"
+        [attr.aria-expanded]="isOpen"
+        (click)="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
-    <div class="overlay" id="overlay"></div>
+    <div class="overlay" [class.active]="isOpen" (click)="closeMenu()"></div>
 
-    <aside class="sidebar" id="sidebar">
+    <aside class="sidebar" [class.active]="isOpen">
         <div class="sidebar-header">
 
             <img src="/img/ford.png" alt="Ford Logo" class="sidebar-logo">
         </div>
         <nav class="sidebar-nav">
             <ul>
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="login.html" id="logoutLink">Logout</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <a routerLink="/home" (click)="closeMenu()">Home</a>
+                </li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <a routerLink="/dashboard" (click)="closeMenu()">Dashboard</a>
+                </li>
+                <li><a href="/login" id="logoutLink" (click)="$event.preventDefault(); logout()">Logout</a></li>
             </ul>
         </nav>
         

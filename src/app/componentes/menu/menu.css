@@ -1,5 +1,5 @@
 .hamburger-btn {
-  position: absolute;
+  position: fixed;
   top: 25px;
   left: 25px;
   z-index: 100;
@@ -45,7 +45,7 @@
   position: fixed;
   top: 0;
   left: -250px;
-  width: 250px;
+  width: min(250px, 82vw);
   height: 100vh;
   background-color: #ffffff;
   z-index: 20;

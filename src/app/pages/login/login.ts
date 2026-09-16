@@ -15,14 +15,15 @@ export class Login {
     nome: '',
     senha: ''
   }
+  loginAutomatico = false;
   mensagemDeErro: String | null = null;
   constructor(private auth: Auth, private router: Router) { }
   login() {
-    this.auth.login(this.usuario).subscribe({
+    this.auth.login(this.usuario, this.loginAutomatico).subscribe({
       next: response => {
         this.router.navigate(['/home']);
       }, error: (err) => {
-        this.mensagemDeErro = err.error.message || 'Ocorreu um erro ao tentar fazer login.';
+        this.mensagemDeErro = err.error?.message || 'Ocorreu um erro ao tentar fazer login.';
       }
     })
   }
