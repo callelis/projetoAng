@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+}
+
+.hamburger-btn {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  z-index: 100;
+  
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 5px;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: #0076ce;
+  border-radius: 2px;
+}
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: 20;
+  transition: left 0.3s ease; 
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar-header {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-logo {
+  max-width: 100px;
+  height: auto;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+
+.sidebar-nav li a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #002c6c; 
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.sidebar-nav li.active a {
+  background-color: #f0f0f0;
+  border-left: 4px solid blue;
+}
+
+.dashboard-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-title {
+    color: #0056a6;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.cards-grid {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card-item {
+    background-color: #f8f9fa;
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+    padding: 15px;
+    width: 220px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.card-title {
+    color: #555555;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 8px;
+}
+
+.card-value {
+    color: #0088ff;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.card-unit {
+    color: #888888;
+    font-size: 11px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #0088ff;
+    border-radius: 4px;
+    color: #333;
+    font-size: 14px;
+    outline: none;
+    margin-top: 10px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.car-image-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.car-image-container img {
+    max-width: 420px;
+    height: auto;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+thead tr {
+    background-color: #003366;
+    color: #ffffff;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+tbody tr {
+    background-color: #ffffff;
+    border-bottom: 2px solid #003366;
+}
+
+.vin-input {
+    border: 1px solid #ccc;
+    padding: 4px 6px;
+    font-size: 12px;
+    width: 180px;
+    background-color: #f9f9f9;
+}

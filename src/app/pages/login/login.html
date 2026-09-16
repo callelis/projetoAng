@@ -1,0 +1,38 @@
+<body>
+    <div class="login">
+
+        <div class="seçãoEsquerda">
+            <img class="imgLogin" src="/img/ranger.png" alt="Ford Ranger">
+        </div>
+
+        <div class="seçãoDireita">
+            <div class="formLogin">
+                <img class="imgLogo" src="/img/ford.png" alt="Logo da Ford">
+
+                <h2>Bem-vindo(a)!</h2>
+
+                <form id="ngForm" (ngSubmit)="login()">
+                    <div class="campo">
+                        <label for="usuario">Usuário:</label>
+                        <input type="text" [(ngModel)]="usuario.nome" name="usuario" id="usuario" placeholder="Digite o usuário." required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="senha">Senha:</label>
+                        <input type="password" [(ngModel)]="usuario.senha" name="senha" id="senha" placeholder="Digite a senha." required>
+                    </div>
+
+                    <div class="campoCheckbox">
+                        <input type="checkbox" id="boxLogin">
+                        <label for="boxLogin">Logar automaticamente</label>
+                    </div>
+
+                    <button type="submit" class="botaoLogin">Entrar</button>
+
+                    <p id="loginMensagem" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+

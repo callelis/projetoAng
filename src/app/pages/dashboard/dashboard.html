@@ -1,0 +1,93 @@
+<body>
+    <app-menu></app-menu>
+    
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="overlay" id="overlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="/img/ford.png" alt="Ford Logo" class="sidebar-logo">
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li class="active"><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="login.html" id="logoutLink">Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="dashboard-container">
+        
+        <h1 class="dashboard-title">Dashboard FORD</h1>
+
+        <div class="cards-grid">
+            
+            <div class="card-item">
+                <label for="veiculo-select" class="card-title">Veículo</label>
+                <div class="select-wrapper">
+                    <select id="veiculo-select">
+                        <option value="ranger">Ranger</option>
+                        <option value="mustang" selected>Mustang</option>
+                        <option value="territory">Territory</option>
+                        <option value="bronco">Bronco Sport</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card-item">
+                <span class="card-title">Total de Vendas</span>
+                <div class="card-value" id="total-vendas">1500</div>
+                <span class="card-unit">Unid.</span>
+            </div>
+
+            <div class="card-item">
+                <span class="card-title">Conectados</span>
+                <div class="card-value" id="conectados">500</div>
+                <span class="card-unit">Unid.</span>
+            </div>
+
+            <div class="card-item">
+                <span class="card-title">Update Software</span>
+                <div class="card-value" id="update-software">750</div>
+                <span class="card-unit">Unid.</span>
+            </div>
+
+        </div>
+
+        <div class="car-image-container">
+            <img src="/img/mustang.png" alt="Ford Mustang" id="car-img">
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código - Vin</th>
+                        <th>Odômetro</th>
+                        <th>Nível de Combustível</th>
+                        <th>Status</th>
+                        <th>Lat.</th>
+                        <th>Long.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" value="2FRHDUYS2Y63NHD22455" readonly class="vin-input"></td>
+                        <td id="odometro">50000 Km</td>
+                        <td id="combustivel">90 %</td>
+                        <td id="status">on</td>
+                        <td id="lat">-12,2322</td>
+                        <td id="long">-38,2314</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
